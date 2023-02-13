@@ -17,7 +17,7 @@ data/
 *.pkl
 
 #File
-*.ipynb
+#*.ipynb
 
 # Distribution / packaging
 .Python
