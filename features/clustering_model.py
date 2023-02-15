@@ -182,6 +182,7 @@ def plot_kmeans_clusters(dataframe, kmeans_model):
     ax.set_zlabel('retour', fontsize=15, fontweight ='bold')
     ax.legend()
     fig.suptitle('Customers Clustering', fontsize=25, fontweight='bold')
+    plt.savefig('Clusters_output')
     plt.show()
 
 
@@ -213,4 +214,5 @@ def plot_elbow_method(df):
     plt.xlabel('Values of K')
     plt.ylabel('Distortion')
     plt.title('The Elbow Method using Distortion')
+    plt.savefig('ElbowMethod_output')
     plt.show()
