@@ -10,6 +10,7 @@ import warnings
 warnings.filterwarnings("ignore")
 
 from features.rule_based_churn import *
+from features.clustering_model import *
 import features.prepare_data as prepare_data
 
 
@@ -57,4 +58,26 @@ if __name__ == "__main__":
     ax.set_xlabel('Churn Flag')
     ax.set_ylabel('Count of clients')
     ax.set_title('Number of clients with each Churn Flag')
+    plt.savefig('RuleBasedModel_output')
     plt.show()
+    
+
+    #Clustering model
+    print("Step 3- Getting the data ready for the Clustering model")
+    print("## Preprocessing the data")
+    pre_df = preprocess_df(df)
+    print("## Done!")
+    print("## Adding new variables to the data")
+    df_new_v = add_variables(pre_df)
+    print("## Done!")
+    print("## Creating the final dataset for the model")
+    model_df = model_dataset(df_new_v)
+    print("## Done!")
+
+    print("Step 4- Clustering model")
+    kmeans_model = create_kmeans_model(model_df)
+    print("## Model successfully created!")
+    print(" ## Let's look at the clusters")
+    plot_kmeans_clusters(model_df, kmeans_model)
+    print("## Let's look at the elbow method")
+    plot_elbow_method(model_df)
