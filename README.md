@@ -51,18 +51,21 @@ Note that after running the main you will have an extra .csv file called 'sub_df
 
 ### notebooks
 
-1) EDA
+**1) EDA**
+
 A notebook with some EDA and visualization of the dataset.
 
-2) Rule Based Churn
+**2) Rule Based Churn**
+
 A notebook testing the functions used to build the churn prediction model.
 
-3) Clustering Model
+**3) Clustering Model**
+
 A notebook testing the functions used to build the churn prediction model.
 
 ### features
 
-1) prepare_data.py
+**1) prepare_data.py**
 
 This file contains function to load and preprocess the data, using Pandas and PyArrow to read and manipulate Parquet files.
 
@@ -71,12 +74,12 @@ The load_data() function takes a file path to a Parquet file, reads the data usi
 The preprocess_data() function takes a DataFrame, randomly selects a fraction of the rows specified by frac, drops any duplicates, and converts a column named "date_order" to a datetime format. The frac parameter controls how much of the data is being selected, so it can be adjusted based on the size of the original dataset and the user need.
 
 
-2) clustering_model.py
+**2) clustering_model.py**
 
 The file contains functions that preprocess the input data to prepare it for clustering analysis. It includes data cleaning, feature engineering, and model training. Specifically, the functions preprocess the data, add variables to the dataset, apply logarithmic transformation to specific columns of the dataset, normalize the dataset, and finally, create a **KMeans model** with the specified parameters, fit it to the input dataset, and return the trained model. 
 
 The functions include preprocess_df(), add_variables(), apply_log1p_transformation(), model_dataset(), and create_kmeans_model(). The file provides an end-to-end solution for analyzing the input data through clustering.
 
-3) rule_based_churn.py
+**3) rule_based_churn.py**
 
 This file contains functions for computing customer churn in the input dataset. The functions take a pandas DataFrame containing customer data, compute the time between orders for each customer, and use statistical analysis to classify customers as "good", "careful", or "churned". The functions include count_orders_per_client(), compute_time_difference_between_orders(), compute_mean_time_diff(), and compute_churn_flag(). The compute_churn_flag() function generates a new DataFrame with a "churn_flag" column indicating the churn status for each customer. Note that the statistical thresholds used to determine churn status can be adjusted by the user.
