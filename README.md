@@ -49,6 +49,7 @@ To properly get the data, one has to download it locally on his/her computer and
 
 Note that after running the main you will have an extra .csv file called 'sub_df.csv'
 
+
 ### notebooks
 
 **1) EDA**
@@ -62,6 +63,7 @@ A notebook testing the functions used to build the churn prediction model.
 **3) Clustering Model**
 
 A notebook testing the functions used to build the churn prediction model.
+
 
 ### features
 
